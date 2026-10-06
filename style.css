@@ -1,0 +1,99 @@
+:root{--ink:#1d1633;--violet:#5b2cf0;--blush:#f7ddd2;--paper:#fbf8ff;--muted:#5d5670;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',system-ui,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--paper);color:var(--ink);line-height:1.6}
+.container{max-width:1120px;margin:auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible,.tab-links:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+/* header */
+#header{background:var(--blush);min-height:100vh;padding-bottom:40px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;flex-wrap:wrap;gap:12px}
+.logo{height:46px;width:auto;border-radius:6px}
+nav ul{display:flex;list-style:none;gap:28px;flex-wrap:wrap}
+nav ul a{font-weight:500;padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+nav ul a:hover{border-color:var(--violet)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:24px}
+.header-text p{font-size:1.1rem;color:var(--muted);margin-bottom:12px}
+.header-text h1{font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.15;font-weight:700}
+.header-text h1 span{color:var(--violet)}
+.hero-cta{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.hero-photo img{width:100%;max-height:70vh;object-fit:cover;object-position:top;border-radius:200px 200px 24px 24px;display:block;box-shadow:0 20px 40px rgba(91,44,240,.18)}
+.btn{display:inline-block;background:var(--violet);color:var(--white);border:2px solid var(--violet);padding:12px 28px;border-radius:999px;font-weight:600;cursor:pointer;font-size:1rem;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--violet)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+/* about */
+#About,#services,#portfolio,#contact{padding:80px 0}
+.sub-title{font-size:2.2rem;font-weight:700;margin-bottom:20px}
+.row{display:flex;gap:56px;align-items:center;flex-wrap:wrap}
+.About-col-1{flex-basis:32%}
+.About-col-1 img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 45%;border-radius:20px}
+.About-col-2{flex-basis:55%;flex-grow:1}
+.tab-titles{display:flex;gap:28px;margin:24px 0 20px}
+.tab-links{font-weight:600;cursor:pointer;position:relative;color:var(--muted)}
+.tab-links::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:3px;background:var(--violet);transition:width .3s}
+.tab-links.active-link{color:var(--ink)}
+.tab-links.active-link::after{width:50%}
+.tab-contents{display:none}
+.tab-contents.active-tab{display:block}
+.tab-contents ul{list-style:none}
+.tab-contents li{margin-bottom:14px;color:var(--muted)}
+.tab-contents li span{color:var(--violet);font-weight:600;font-size:.95rem}
+/* services */
+#services{background:var(--white)}
+.services-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:32px}
+.service-card{background:var(--paper);padding:36px 30px;border-radius:16px;border:1px solid #e6dff5;transition:transform .3s,border-color .3s}
+.service-card:hover{transform:translateY(-6px);border-color:var(--violet)}
+.service-card i{font-size:2rem;color:var(--violet);margin-bottom:18px}
+.service-card h2{font-size:1.3rem;margin-bottom:10px}
+.service-card p{color:var(--muted);margin-bottom:14px}
+.service-card a{color:var(--violet);font-weight:600}
+/* work */
+/* contact */
+#contact{background:var(--ink);color:var(--white)}
+.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.contact-left h1{font-size:2.2rem;margin-bottom:20px}
+.contact-left p{margin-bottom:20px;word-break:break-word}
+.contact-left p i{color:#b9a3ff;margin-right:8px}
+.social-icons{display:flex;gap:18px;margin-bottom:28px}
+.social-icons a{font-size:1.4rem;transition:color .2s}
+.social-icons a:hover{color:#b9a3ff}
+.contact-right form{display:flex;flex-direction:column;gap:14px}
+.contact-right input,.contact-right textarea{background:#2b2247;color:var(--white);border:1px solid #4a3d73;border-radius:10px;padding:14px;font-size:1rem;resize:vertical}
+.contact-right input::placeholder,.contact-right textarea::placeholder{color:#b3a9cc}
+.contact-right .btn{align-self:flex-start;background:#b9a3ff;border-color:#b9a3ff;color:var(--ink)}
+.contact-right .btn:hover{background:transparent;color:#b9a3ff}
+@media(max-width:800px){
+ .hero,.contact-container{grid-template-columns:1fr}
+ .hero-photo{order:-1;max-width:320px}
+ .sub-title,.contact-left h1{font-size:1.8rem}
+ #About,#services,#portfolio,#contact{padding:56px 0}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* added content */
+.header-text .role{font-weight:600;color:var(--violet);font-size:1rem}
+.header-text .intro{max-width:52ch;margin-top:18px;color:var(--ink)}
+.About-col-2 p{margin-bottom:14px;max-width:70ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.chips li,.chips span{list-style:none;background:var(--white);border:1px solid #d9ceef;color:var(--ink);border-radius:999px;padding:4px 14px;font-size:.88rem;margin:0}
+.tab-contents h3{font-size:.95rem;color:var(--violet);margin-top:6px}
+.tab-contents .chips li{color:var(--ink)}
+.edu li strong{color:var(--ink)}
+.service-card p strong,.about-text strong{font-weight:600}
+.project-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:32px}
+.project{background:var(--white);border:1px solid #e6dff5;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:10px;transition:border-color .3s}
+.project:hover{border-color:var(--violet)}
+.project h3{font-size:1.25rem}
+.project p{color:var(--muted)}
+.project h4{font-size:.9rem;color:var(--violet);margin-top:6px}
+.project .focus{color:var(--muted);font-size:.92rem}
+.project .btn{align-self:flex-start;margin-top:auto;padding:8px 22px;font-size:.92rem}
+#stack{padding:80px 0;background:var(--white)}
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:28px}
+.stack-grid h3{font-size:1.05rem;margin-bottom:6px}
+#goal{padding:80px 0;background:var(--blush)}
+#goal p{max-width:70ch;margin-bottom:16px}
+#goal .roles{font-weight:600;color:var(--violet);font-size:1.1rem}
+.contact-left .lead{color:#d9d1ee;max-width:46ch}
+.contact-left .detail{margin-bottom:14px}
+.contact-left .detail a{color:#b9a3ff;text-decoration:underline}
